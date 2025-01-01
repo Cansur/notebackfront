@@ -1,3 +1,90 @@
-.App {
-  
+/* 화면 전체 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+.main {
+    /* 화면 꽉 차게 */
+    width: 100vw;
+    height: 100vh;
+    background: whitesmoke;
+
+    /* 가운데 정렬 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.middle {
+    display: block;
+    margin: auto auto;
+    width: 300px;
+    font-size: 2ch;
+}
+
+
+/* input 박스 스타일 */
+.input-box {
+    width: 100%; /* 입력 박스의 가로 크기를 부모 요소에 맞춤 */
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+  }
+  
+  /* input focus 효과 */
+  .input-box:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  /* 텍스트 스타일 */
+  p {
+    font-size: 18px;
+    color: #333;
+    margin-top: 5px;
+  }
+
+  /* 기본 버튼 스타일 */
+.naver-login-button {
+    background-color: #03c75a; /* 네이버 초록색 */
+    color: white; /* 글씨 색: 흰색 */
+    font-size: 16px; /* 글씨 크기 */
+    font-weight: bold; /* 글씨 두께 */
+    border: none; /* 기본 테두리 제거 */
+    border-radius: 24px; /* 둥글게 만들기 */
+    padding: 10px 20px; /* 버튼 내부 여백 (세로, 가로) */
+    cursor: pointer; /* 마우스 커서 변경 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 버튼에 약간의 그림자 */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* 효과 부드럽게 전환 */
+
+    margin-top: 10px; /* 위랑 조금 띄우기 */
+    margin-bottom: 5px; /* 밑이랑 조금 띄우기 */
+  }
+  
+  /* 버튼 hover 시 */
+  .naver-login-button:hover {
+    background-color: #02b152; /* 조금 더 짙은 초록색 */
+    transform: translateY(-2px); /* 살짝 위로 올라가는 효과 */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* 그림자 강조 */
+  }
+  
+  /* 버튼 클릭 시 */
+  .naver-login-button:active {
+    background-color: #029c4e; /* 클릭 시 더 어두운 초록색 */
+    transform: translateY(0); /* 클릭 시 원래 위치로 돌아옴 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 클릭 시 그림자 감소 */
+  }
+
+
+
+
+  /* 나만의 공간 */
+  .text_15{
+    font-size: 15px;
+  }
