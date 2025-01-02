@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import Header from '../components/Header';
+import SideBar from '../components/SideBar';
 
 const Main = () => {
 
@@ -13,9 +15,14 @@ const Main = () => {
     // -------------------------------
 
     return (
-        <div class='main'>
-            <div class='middle'>
-                Main Page
+        <div>
+            <Header/>
+            <SideBar/>
+            
+            <div class='main'>
+                <div class='middle'>
+                    Main Page
+                </div>
             </div>
         </div>
     );

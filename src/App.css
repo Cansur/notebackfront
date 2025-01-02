@@ -7,8 +7,11 @@
 
 .main {
     /* 화면 꽉 차게 */
-    width: 100vw;
-    height: 100vh;
+    position: fixed;
+    left: 300px;
+    top: 50px;
+    width: calc(100vw - 300px);
+    height: calc(100vh - 50px);
     background: whitesmoke;
 
     /* 가운데 정렬 */

@@ -13,15 +13,20 @@ const Login = () => {
     }, []);
     // -------------------------------
   
+    // 페이지 이동 함수
+    const navigate = useNavigate();
+    const onClick = () => {
+      navigate('/main');
+    }
+    // -------------------------------
+
     return (
       <div class='main'>
         <div class='middle'>
           <input type="text" className="input-box" placeholder='아이디 또는 전화번호'/>
           <input type="text" className="input-box" placeholder='비밀번호'/>
-          <button class="naver-login-button"> 로그인 </button>
+          <button class="naver-login-button" onClick={onClick}> 로그인 </button>
           <p class='text_15'>회원가입</p>
-          <Link to="/Main"><li>1번상품</li></Link>
-
         </div>
       </div>
     );
