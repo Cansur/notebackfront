@@ -10,7 +10,7 @@
 }
 
 .header_contain{
-    width: 400px;
+    width: 320px;
     justify-content: space-around;
     display: flex;
 }
@@ -23,4 +23,8 @@
     padding: 60px 40px;
     display: flex;
     flex-direction: column;
+}
+
+.mdeditor{
+    width: 1832px;
 }

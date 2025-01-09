@@ -5,9 +5,9 @@ const Header = () => {
     return (
         <div class='header'>
             <div class='header_contain'>
-                <p>File</p>
-                <p>Edit</p>
-                <p>Selection</p>
+                <p>🔙</p>
+                <p>🔜</p>
+                <p>➕</p>
                 <p>View</p>
                 <p>Go</p>
                 <p>Run</p>

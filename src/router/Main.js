@@ -3,6 +3,9 @@ import axios from 'axios';
 import Header from '../components/Header';
 import SideBar from '../components/SideBar';
 
+// MD Editor
+import MDEditor from '@uiw/react-md-editor';
+
 const Main = () => {
 
     // spring boot 연결 test
@@ -14,16 +17,25 @@ const Main = () => {
     }, []);
     // -------------------------------
 
+    // Editor
+    const [value, setValue] = React.useState("**Hello world!!!**");
+    // -------------------------------
+
     return (
         <div>
-            <Header/>
-            <SideBar/>
             
+            <SideBar />
+            <Header />
             <div class='main2'>
-                <div class='middle'>
-                    Main Page
+                <div data-color-mode="light" class="mdeditor">
+                    <MDEditor
+                        value={value}
+                        onChange={setValue}
+                        height={960}
+                    />
                 </div>
             </div>
+            
         </div>
     );
 }
