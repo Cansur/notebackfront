@@ -21,9 +21,10 @@ const Main = () => {
     const [value, setValue] = React.useState("**Hello world!!!**");
     // -------------------------------
 
+
+    
     return (
         <div>
-            
             <SideBar />
             <Header />
             <div class='main2'>
