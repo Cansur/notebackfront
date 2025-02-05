@@ -3,8 +3,8 @@ import '../styles/ComponentsCss.css';
 
 const Header = () => {
     return (
-        <div class='header'>
-            <div class='header_contain'>
+        <div class='sticky top-0 z-50 bg-gray-900/90 p-4 text-white backdrop-blur-md'>
+            <div class='flex items-center space-x-4 color-white'>
                 <p>🔙</p>
                 <p>🔜</p>
                 <p>➕</p>

@@ -54,28 +54,28 @@ const Login = () => {
   //---------------------------------------------------------
   
     return (
-      <div className="main">
-        <div className="middle">
+      <div class="fixed w-full h-full flex items-center text-center bg-neutral-100">
+        <div className="middle block m-auto w-80">
           <form onSubmit={onSubmit} action="/login" method="POST">
             <input
               type="text"
               name="username"
-              className="input-box"
+              className="w-full input-box"
               placeholder="아이디 또는 전화번호"
               required
             />
             <input
               type="password"
               name="password"
-              className="input-box"
+              className="w-full input-box"
               placeholder="비밀번호"
               required
             />
-            <button type="submit" className="naver-login-button">
+            <button type="submit" className="naver-login-button" onClick={()=> onClick()}>
               로그인
             </button>
           </form>
-          <p className="text_15">회원가입</p>
+          <p className="text-base">회원가입</p>
         </div>
       </div>
     );
