@@ -1,6 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 import axios from 'axios';
+import axiosInstance from '../api/axiosInstance';
 
 
 const Test = () => {
@@ -81,7 +82,7 @@ const Test = () => {
         try {
             const token = localStorage.getItem('access');
 
-            const response = await axios.get('/api/test', {
+            const response = await axios.get('/api/access', {
                 headers: {
                     access: token,
                 },
@@ -92,6 +93,34 @@ const Test = () => {
         }
     }
 
+    // refresh token을 사용하여 access token 재발급
+    const onClickRefresh = async () => {
+        try {
+            const response = await axios.post('/api/reissue', {
+                headers: {
+                    'Content-Type': 'application/json', // JSON 형식으로 전송
+                },
+            });
+
+            const token = response.headers['access']; // 토큰 추출
+            if (token) {
+                localStorage.setItem('access', token); // 토큰 저장
+                console.log('Token stored:', token);
+            }
+        } catch (error) {
+            console.error('Refresh failed:', error);
+        }
+    }
+
+    // axios 인스턴스를 사용하여 rest api 호출
+    const apiAccess = async () => {
+        try {
+            const response = await axiosInstance.get('/access');
+            console.log(response.data);
+        } catch (error) {
+            console.error('Failed:', error);
+    }};
+
     return (
         <div className="flex flex-col item-center px-32 py-64 bg-neutral-100">
 
@@ -100,6 +129,10 @@ const Test = () => {
                 <button className="naver-login-button" onClick={onClickPostTest}>PostTestMessage</button>
                 <button className="naver-login-button" onClick={onClickCheckLocalStroge}>CheckLocalStroge</button>
                 <button className="naver-login-button" onClick={onClickCheckSpringToken}>CheckToken</button>
+                <button className="naver-login-button" onClick={onClickRefresh}>Refresh</button>
+            </div>
+            <div className="flex m-5 justify-center gap-4 items-center">
+                <button className="naver-login-button-blue" onClick={apiAccess}>Test</button>
             </div>
             <div className="my-64 w-80 text-center m-auto">
                 <form onSubmit={onSubmit} className="">

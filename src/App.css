@@ -87,3 +87,34 @@ p {
   transform: translateY(0);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+/* 기본 버튼 스타일 */
+.naver-login-button-blue {
+  background-color: #4873ff;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 24px;
+  padding: 10px 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+/* 버튼 hover 시 */
+.naver-login-button-blue:hover {
+  background-color: #4873ff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* 버튼 클릭 시 */
+.naver-login-button-blue:active {
+  background-color: #4873ff;
+  transform: translateY(0);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
