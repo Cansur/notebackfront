@@ -25,9 +25,14 @@ axiosInstance.interceptors.request.use(function (config) {
 axiosInstance.interceptors.response.use(
     (response) => response,
     async (error) => {
-      if (error.response && error.response.status === 401) {
-        console.log("Access Token이 만료됨. 재발급 시도...");
-  
+      if (error.response && (error.response.status === 403 || error.response.status === 401)) {
+        if(error.response.status === 403) {
+          console.log("Access Token이 없습니다. 재발급 시도...");
+        }
+        if(error.response.status === 401) {
+          console.log("Access Token이 만료됨. 재발급 시도...");
+        }
+
         try {
           const res = await axios.post("/api/reissue");
   

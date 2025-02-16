@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Header from '../components/Header';
 import SideBar from '../components/SideBar';
+import MDEditorComp from '../components/MDEditorComp';
 
 // MD Editor
 import MDEditor from '@uiw/react-md-editor';
@@ -66,21 +67,12 @@ const Main = () => {
 
 
     return (
-        <div class='relative'>
+        <div className='bg-gray-700 h-screen py-32 px-64 text-white'>
             <Header />
-            <SideBar />
-            <div class='main2'>
-                <div data-color-mode="light" class="mdeditor">
-                    <input class="my-8" onChange={handleTitleChange} ></input>
-                    <button type="button" onClick={() => localStorage.setItem("item", 10)}>dd</button>
-                    <MDEditor
-                        value={content}
-                        onChange={handleContentChange}
-                        height={900}
-                    />
-                </div>
+            <div className='flex justify-between'>
+                <SideBar />
+                <MDEditorComp />
             </div>
-
         </div>
     );
 }
