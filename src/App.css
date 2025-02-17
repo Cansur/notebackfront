@@ -1,19 +1,20 @@
-
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* * {
-    box-sizing: border-box;
+/* Tailwind의 base 스타일 확장 */
+@layer base {
+  @font-face {
     font-family: "RobotoCondensed B";
-}
+    font-size: xx-large;
+    font-weight: 700;
+    src: url("./font/RobotoCondensed B.ttf") format("truetype");
+  }
 
-@font-face {
-  font-family: "RobotoCondensed B";
-  font-weight: normal;
-  src: url(./font/RobotoCondensed\ B.ttf) format("truetype");
-} */
+  * {
+    font-family: "RobotoCondensed B", sans-serif;
+  }
+}
 
 .main2 {
   /* 화면 꽉 차게 */
@@ -117,4 +118,25 @@ p {
   background-color: #4873ff;
   transform: translateY(0);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.h-800{
+  height: 800px;
+}
+
+.scroll{
+}
+
+.scroll4::-webkit-scrollbar {
+  width: 10px;
+}
+ 
+.scroll4::-webkit-scrollbar-thumb {
+  background: #666;
+  border-radius: 20px;
+}
+
+.scroll4::-webkit-scrollbar-track {
+  background: #ddd;
+  border-radius: 20px;
 }
