@@ -5,6 +5,7 @@ import NotFound from './router/NotFound';
 import Main from './router/Main';
 import Test from './router/Test';
 import ProtectedRoute from './api/ProtectedRoute';
+import Register from './router/Register/Register';
 
 const App = () => {
 
@@ -14,6 +15,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Login />}></Route>
         <Route path="/main" element={<ProtectedRoute><Main /></ProtectedRoute>} />
+        <Route path="/register" element={<Register />}></Route>
         <Route path="/test" element={<Test />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
