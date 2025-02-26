@@ -15,9 +15,9 @@ const Login = () => {
       password: formData.get('password'),
     };
     
-    if(localStorage.getItem('token') != null){
-      console.log('Token removed:', localStorage.getItem('token'));
-      localStorage.removeItem('token');
+    if (localStorage.getItem('access') != null) {
+      console.log('Token removed:', localStorage.getItem('access'));
+      localStorage.removeItem('access');
     }
 
     try {
@@ -39,32 +39,38 @@ const Login = () => {
   };
   
   return (
-    <div className="fixed w-full h-full flex items-center text-center bg-neutral-100">
-      <Link className="absolute top-10 right-10 naver-login-button" to="/test">기능 Test</Link>
-      <div className="middle block m-auto w-80">
+    <div className="flex items-center justify-center min-h-screen bg-gray-700">
+      <div className="bg-gray-600 p-10 rounded-lg shadow-lg w-96 text-center">
+        <h2 className="text-green-400 text-xl font-bold mb-6">로그인</h2>
         <form onSubmit={onSubmit}>
-          <input
-            type="text"
-            name="username"
-            className="w-full input-box"
-            placeholder="아이디 또는 전화번호"
-            required
-          />
-          <input
-            type="password"
-            name="password"
-            className="w-full input-box"
-            placeholder="비밀번호"
-            required
-          />
-          <button type="submit" className="naver-login-button">
+          <div className="mb-4">
+            <input
+              type="text"
+              name="username"
+              className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-400 bg-gray-700 text-white"
+              placeholder="아이디 또는 전화번호"
+              required
+            />
+          </div>
+          <div className="mb-4">
+            <input
+              type="password"
+              name="password"
+              className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-400 bg-gray-700 text-white"
+              placeholder="비밀번호"
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            className="w-full py-3 bg-green-500 text-white rounded hover:bg-green-600 font-bold"
+          >
             로그인
           </button>
         </form>
-        <p className="text-base">
-          <Link to="/register">회원가입</Link>
-          {/* <p>{accessToken}</p> */}
-        </p>
+        <div className="mt-4">
+          <p className="text-gray-300">아직 계정이 없으신가요? <Link to="/register" className="text-green-400 font-bold">회원가입</Link></p>
+        </div>
       </div>
     </div>
   );

@@ -24,3 +24,6 @@ const App = () => {
 }
 
 export default App;
+
+
+// npm install --save react-toastify  (알림창
