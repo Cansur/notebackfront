@@ -112,6 +112,10 @@ const Test = () => {
         }
     }
 
+    const onClickMove = async () => {
+        navigate("/main");
+    }
+
     // axios 인스턴스를 사용하여 rest api 호출
     const apiAccess = async () => {
         try {
@@ -133,6 +137,7 @@ const Test = () => {
             </div>
             <div className="flex m-5 justify-center gap-4 items-center">
                 <button className="naver-login-button-blue" onClick={apiAccess}>Test</button>
+                <button className="naver-login-button-blue" onClick={onClickMove}>Move</button>
             </div>
             <div className="my-64 w-80 text-center m-auto">
                 <form onSubmit={onSubmit} className="">

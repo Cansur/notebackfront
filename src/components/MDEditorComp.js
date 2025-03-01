@@ -25,19 +25,24 @@ const MDEditorComp = () => {
                 if (!lastBoardId) return;
 
                 const boardData = await axiosInstance.get(`/board/${lastBoardId}`);
+
                 setTitle(boardData.data.title);
                 setContent(boardData.data.content);
                 // 근데 생성인지 아니면 업데이트인지 구분이 필요하네??
                 // 그럼 이건 어떻게 구분하지??
             } catch (error) {
-                // 401 Unauthorized 에러 발생 시 무시하고 진행
-                if (error.response.status === 401) return;
-
-                localStorage.removeItem("lastBoardId");
-                console.error(error);
-
-                // main page로 이동
-                navigate("/main");
+                if (error.response) {
+                    if (error.response.status === 403) {
+                        console.error("403 Forbidden: 권한이 없습니다.");
+                        localStorage.setItem("lastBoardId", null);
+                        // window.location.reload();
+                        return;
+                    } else {
+                        console.error(`에러 발생: ${error.response.statusText}`);
+                    }
+                } else {
+                    console.error("서버 응답 없음:", error);
+                }
             }
 
         };
@@ -77,12 +82,14 @@ const MDEditorComp = () => {
             <div data-color-mode="light">
                 <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
                     <input
-                        className="w-full h-10 px-4 py-2 my-2 bg-gray-700 border-b-2 text-3xl"
+                        className="w-full h-10 px-4 py-2 my-2 bg-gray-700 border-b-2 border-gray-500 text-3xl 
+                        focus:outline-none focus:border-b-4 focus:border-blue-500 transition-all duration-200"
                         value={title}
                         onChange={handleTitleChange}
                         placeholder="제목을 입력하세요"
                         required
                     />
+
                     <MDEditor height={650} value={content} onChange={handleContentChange} />
                     <button
                         type="submit"
