@@ -25,20 +25,24 @@ const MDEditorComp = () => {
                 if (!lastBoardId) return;
 
                 const boardData = await axiosInstance.get(`/board/${lastBoardId}`);
+
                 setTitle(boardData.data.title);
                 setContent(boardData.data.content);
                 // 근데 생성인지 아니면 업데이트인지 구분이 필요하네??
                 // 그럼 이건 어떻게 구분하지??
             } catch (error) {
-                // 401 Unauthorized 에러 발생 시 무시하고 진행
-                // if (error.response.status === 401) return;
-
-                // localStorage.removeItem("lastBoardId");
-                console.error(error);
-                navigate("/main");
-                console.errer("이동");
-                // // main page로 이동
-                
+                if (error.response) {
+                    if (error.response.status === 403) {
+                        console.error("403 Forbidden: 권한이 없습니다.");
+                        localStorage.setItem("lastBoardId", null);
+                        // window.location.reload();
+                        return;
+                    } else {
+                        console.error(`에러 발생: ${error.response.statusText}`);
+                    }
+                } else {
+                    console.error("서버 응답 없음:", error);
+                }
             }
 
         };

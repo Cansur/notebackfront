@@ -25,7 +25,8 @@ axiosInstance.interceptors.request.use(function (config) {
 axiosInstance.interceptors.response.use(
   (response) => response,
   async (error) => {
-    if (error.response && (error.response.status === 401 || error.response.status === 403)) {
+    // if (error.response && (error.response.status === 401 || error.response.status === 403)) {
+      if (error.response && error.response.status === 401) {
 
       try {
         const res = await axios.post("/api/reissue");
