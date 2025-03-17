@@ -6,7 +6,7 @@ import Main from './router/Main';
 import Test from './router/Test';
 import ProtectedRoute from './api/ProtectedRoute';
 import Register from './router/Register/Register';
-import Setting from './router/Setting/Setting'
+import Setting from './router/Setting/Setting';
 
 const App = () => {
 
