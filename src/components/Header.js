@@ -49,7 +49,7 @@ const Header = () => {
 
   
   return (
-    <div className="bg-gray-900 text-white p-4 flex justify-between items-center shadow-lg">
+    <div className="text-white p-4 flex justify-between items-center shadow-lg">
       <div className="flex items-center space-x-4">
         <p className="cursor-pointer tl">NoteBack</p>
       </div>

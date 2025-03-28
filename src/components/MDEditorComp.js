@@ -41,7 +41,7 @@ export default function MDEditorComp() {
   }, [blocks]);
 
   return (
-    <div>
+    <div style={{ padding: "100px" }}>
       <BlockNoteView
         editor={editor}
         onChange={() => {

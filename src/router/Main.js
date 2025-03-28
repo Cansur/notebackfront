@@ -13,11 +13,12 @@ const Main = () => {
   };
 
   return (
-    <div className="bg-gray-900 min-h-screen text-white flex flex-col">
-      <Header />
+    <div>
       <div className="flex flex-grow">
         <SideBar onItemClick={refreshEditor} />
-        <div className="flex-grow p-8">
+        
+        <div className="flex-grow" style={{ backgroundColor: "#1f1f1f" }}>
+          <Header className="mb-8"/>
           <MDEditorComp key={editorKey} />
         </div>
       </div>

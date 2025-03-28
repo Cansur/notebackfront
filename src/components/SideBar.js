@@ -25,7 +25,7 @@ const SideBar = ({ onItemClick }) => {
   };
 
   return (
-    <div className="w-1/5 min-h-screen bg-gray-800 text-white p-6 shadow-lg">
+    <div className="w-1/6 min-h-screen bg-black text-white p-6 shadow-lg">
       <div className="mb-6 text-lg font-semibold">Notion</div>
 
       {/* 기본 메뉴 */}
